@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ titlepage }} :: {{ block.super }}
+{% endblock %}
+
+{% block header %}
+{% include 'inc/header.html' %}
+{% endblock %}
+
+{% block content %}
+    <div style="">
+        <h1>Ваши ссылки</h1>
+        {% for item in links %}
+        <p>{{ item.title }}
+        <a href="http://{{ domain }}/lnk/{{ item.shortlink }}">http://{{ domain }}/lnk/{{ item.shortlink }}</a>
+        </p>
+
+
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
+
+
+
+{% block footer %}
+{% include 'inc/footer.html' %}
+{% endblock %}
